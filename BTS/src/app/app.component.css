@@ -4,7 +4,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* filter: blur(5px); */
+  filter: blur(1px);
 }
 
 nav {
@@ -55,6 +55,51 @@ nav {
 .navbar-button:hover {
   background-position: right center;
   color: #fff;
+  text-decoration: none;
+  box-shadow: 0 0 15px #eee;
+}
+
+.welcome-text {
+  width: 100%;
+  position: absolute;
+  top: 35%;
+  display: grid;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;
+}
+
+h1 {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+h3 {
+  font-weight: bold;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.center-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+}
+
+.mid-button {
+  border-radius: 0;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  display: block;
+}
+
+.mid-button:hover {
+  background-position: right center;
+  color: #005d6f;
   text-decoration: none;
   box-shadow: 0 0 15px #eee;
 }
