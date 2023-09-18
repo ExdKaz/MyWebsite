@@ -1,8 +1,44 @@
 .dashboard-image {
   height: 100vh;
-  background-image: url("../../src/assets/mountains.jpg");
+  background-image: url("../assets/mountains.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: blur(2px);
+  /* filter: blur(5px); */
 }
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.navbar-logo {
+  height: 80px;
+  width: 170px;
+  background-image: url("https://websitedemos.net/mountain/wp-content/uploads/sites/571/2020/04/logo1@2x.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.navbar-end {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 16px;
+  column-gap: 2rem;
+  height: 80px;
+  color: #ffffff;
+  padding-top: 2rem;
+}
+
+.navbar-button {
+  border-radius: 0;
+  background-color: linear-gradient();
+}
+
+/* #ef5553 */
