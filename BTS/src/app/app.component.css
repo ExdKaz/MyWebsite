@@ -44,12 +44,12 @@ nav {
 
 .navbar-button {
   border-radius: 0;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right,
     #ef5553 10%,
     #005d6f 60%,
     #ef5553 100%
-  );
+  ); */
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
@@ -60,7 +60,7 @@ nav {
 
 .navbar-button:hover {
   background-position: right center;
-  color: #fff;
+  color: #005d6f;
   text-decoration: none;
   box-shadow: 0 0 15px #eee;
 }
