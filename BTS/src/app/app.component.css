@@ -24,6 +24,7 @@ nav {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
+  cursor: pointer;
 }
 
 .navbar-end {
@@ -35,6 +36,10 @@ nav {
   height: 80px;
   color: #ffffff;
   padding-top: 2rem;
+}
+
+.navbar-end > a {
+  cursor: pointer;
 }
 
 .navbar-button {
@@ -73,6 +78,7 @@ nav {
 h1 {
   font-weight: bold;
   color: #ffffff;
+  text-align: center;
 }
 
 h3 {
@@ -103,4 +109,97 @@ h3 {
   color: #005d6f;
   text-decoration: none;
   box-shadow: 0 0 15px #eee;
+}
+
+.box {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  position: absolute;
+  opacity: 0;
+  text-align: center;
+  top: 10;
+}
+
+.box1 {
+  animation: animation1 15s infinite;
+}
+.box2 {
+  animation: animation2 15s infinite;
+}
+.box3 {
+  animation: animation3 15s infinite;
+}
+.box4 {
+  animation: animation4 15s infinite;
+}
+
+.box5 {
+  animation: animation5 15s infinite;
+}
+
+@keyframes animation1 {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+}
+
+@keyframes animation2 {
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+
+@keyframes animation3 {
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+}
+
+@keyframes animation4 {
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+}
+
+@keyframes animation5 {
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.text-animation {
+  display: flex;
+  justify-content: center;
+  height: 50px;
 }
