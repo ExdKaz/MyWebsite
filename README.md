@@ -1,4 +1,4 @@
 # MyWebsite
 
-My Angular Website
+My Angular Applications
 Author : Abhishek Rana
