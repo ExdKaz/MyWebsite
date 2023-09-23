@@ -1,0 +1,39 @@
+body {
+  display: flex;
+}
+.card {
+  width: 40%;
+  margin: 0 auto;
+  top: 15%;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+.savebtn {
+  display: flex;
+  justify-content: center;
+}
+.card-header {
+  text-align: center;
+  font-weight: 600;
+}
+
+.pass {
+  position: relative;
+}
+
+span {
+  position: absolute;
+  right: 4px;
+  top: 7px;
+}
+
+.radio {
+  text-align: center;
+}
+
+.log {
+  text-align: center;
+}

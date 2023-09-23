@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "userName": "Abhishek",
+      "userAge": 24,
+      "id": "abhi@gmail.com",
+      "userPassword": "123456",
+      "role": "admin",
+      "isActive": true
+    }
+  ]
+}

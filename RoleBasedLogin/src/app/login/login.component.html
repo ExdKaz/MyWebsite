@@ -1,0 +1,287 @@
+<div *ngIf="!login" class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+  <div class="card-header">Register User</div>
+  <div class="card-body">
+    <form [formGroup]="registrationForm" (ngSubmit)="registerUser()">
+      <div class="row">
+        <div class="col">
+          <label for="name">Name</label>
+          <input
+            [class.is-invalid]="
+              registrationForm.controls.userName.invalid &&
+              registrationForm.controls.userName.touched
+            "
+            type="text"
+            class="form-control"
+            formControlName="userName"
+            placeholder="Enter your name"
+          />
+          <div
+            *ngIf="
+              registrationForm.controls.userName.invalid &&
+              registrationForm.controls.userName.touched
+            "
+          >
+            <small
+              *ngIf="registrationForm.controls.userName.errors?.['required']"
+              class="text-danger"
+              >username is required</small
+            >
+            <small
+              *ngIf="registrationForm.controls.userName.errors?.['minlength']"
+              class="text-danger"
+              >minimum length should be 3</small
+            >
+          </div>
+        </div>
+        <div class="col">
+          <label for="name">Age</label>
+          <input
+            type="number"
+            [class.is-invalid]="
+              registrationForm.controls.userAge.invalid &&
+              registrationForm.controls.userAge.touched
+            "
+            class="form-control"
+            formControlName="userAge"
+            placeholder="Enter your age"
+          />
+          <div
+            *ngIf="
+              registrationForm.controls.userAge.invalid &&
+              registrationForm.controls.userAge.touched
+            "
+          >
+            <small
+              *ngIf="registrationForm.controls.userAge.errors?.['required']"
+              class="text-danger"
+              >age is required & should be number</small
+            >
+            <small
+              *ngIf="registrationForm.controls.userAge.errors?.['min']"
+              class="text-danger"
+              >age cannot be 0</small
+            >
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            [class.is-invalid]="
+              registrationForm.controls.id.invalid &&
+              registrationForm.controls.id.touched
+            "
+            class="form-control"
+            formControlName="id"
+            placeholder="Enter your email"
+            autocomplete="new"
+          />
+          <div
+            *ngIf="
+              registrationForm.controls.id.invalid &&
+              registrationForm.controls.id.touched
+            "
+          >
+            <small
+              *ngIf="registrationForm.controls.id.errors?.['required']"
+              class="text-danger"
+              >email is required</small
+            >
+            <small
+              *ngIf="registrationForm.controls.id.errors?.['pattern']"
+              class="text-danger"
+              >invalid email</small
+            >
+          </div>
+        </div>
+        <div class="col">
+          <label for="password">Password</label>
+          <div class="pass">
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              type="password"
+              [class.is-invalid]="
+                registrationForm.controls.userPassword.invalid &&
+                registrationForm.controls.userPassword.touched
+              "
+              class="form-control"
+              formControlName="userPassword"
+              placeholder="Enter your password"
+              autocomplete="new-password"
+            />
+
+            <span
+              ><i
+                (click)="toggleShow()"
+                *ngIf="!showPassword"
+                class="fa-regular fa-eye"
+              ></i>
+              <i
+                (click)="toggleShow()"
+                *ngIf="showPassword"
+                class="fa-regular fa-eye-slash"
+              ></i
+            ></span>
+          </div>
+          <div
+            *ngIf="
+              registrationForm.controls.userPassword.invalid &&
+              registrationForm.controls.userPassword.touched
+            "
+          >
+            <small
+              *ngIf="registrationForm.controls.userPassword.errors?.['required']"
+              class="text-danger"
+              >password is required</small
+            >
+            <small
+              *ngIf="registrationForm.controls.userPassword.errors?.['minlength']"
+              class="text-danger"
+              >min length should be 6</small
+            >
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col radio">
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="role"
+            required
+          >
+            <mat-radio-button value="admin">Admin</mat-radio-button>
+            <mat-radio-button value="user">User</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+      <div class="row">
+        <div class="savebtn">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!registrationForm.valid"
+          >
+            Register
+          </button>
+        </div>
+      </div>
+      <div class="row log">
+        <p>Already have an account?</p>
+        <a
+          style="color: rgb(56, 111, 56); cursor: pointer"
+          (click)="change(true)"
+          >Login</a
+        >
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Login page -->
+
+<div *ngIf="login" class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+  <div class="card-header">Login User</div>
+  <div class="card-body">
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+      <div class="row">
+        <div class="col">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            [class.is-invalid]="
+              loginForm.controls.id.invalid && loginForm.controls.id.touched
+            "
+            class="form-control"
+            formControlName="id"
+            placeholder="Enter your email"
+            autocomplete="new-email"
+          />
+          <div
+            *ngIf="
+              loginForm.controls.id.invalid && loginForm.controls.id.touched
+            "
+          >
+            <small
+              *ngIf="loginForm.controls.id.errors?.['required']"
+              class="text-danger"
+              >email is required</small
+            >
+            <small
+              *ngIf="loginForm.controls.id.errors?.['pattern']"
+              class="text-danger"
+              >invalid email</small
+            >
+          </div>
+        </div>
+        <div class="col">
+          <label for="password">Password</label>
+          <div class="pass">
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              type="password"
+              [class.is-invalid]="
+                loginForm.controls.userPassword.invalid &&
+                loginForm.controls.userPassword.touched
+              "
+              class="form-control"
+              formControlName="userPassword"
+              placeholder="Enter your password"
+              autocomplete="new-password"
+            />
+
+            <span
+              ><i
+                (click)="toggleShow()"
+                *ngIf="!showPassword"
+                class="fa-regular fa-eye"
+              ></i>
+              <i
+                (click)="toggleShow()"
+                *ngIf="showPassword"
+                class="fa-regular fa-eye-slash"
+              ></i
+            ></span>
+          </div>
+          <div
+            *ngIf="
+              loginForm.controls.userPassword.invalid &&
+              loginForm.controls.userPassword.touched
+            "
+          >
+            <small
+              *ngIf="loginForm.controls.userPassword.errors?.['required']"
+              class="text-danger"
+              >password is required</small
+            >
+            <small
+              *ngIf="loginForm.controls.userPassword.errors?.['minlength']"
+              class="text-danger"
+              >min length should be 6</small
+            >
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="savebtn">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!loginForm.valid"
+          >
+            Login
+          </button>
+        </div>
+      </div>
+      <div class="row log">
+        <p>Already have an account?</p>
+        <a
+          style="color: rgb(232, 25, 101); cursor: pointer"
+          (click)="change(false)"
+          >Register</a
+        >
+      </div>
+    </form>
+  </div>
+</div>
